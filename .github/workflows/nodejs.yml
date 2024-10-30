@@ -28,13 +28,12 @@ jobs:
 
       - run: npm test
 
+  docker-build-and-push:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
 
-docker-build-and-push:
-  needs: build
-  runs-on: ubuntu-latest
-  if:  github.ref == 'refs/heads/main'
-
-  steps:
+    steps:
       - uses: actions/checkout@v2
 
       - name: LogIn su DockerHub
@@ -50,4 +49,3 @@ docker-build-and-push:
           file: Dockerfile
           push: true
           tags: a1d3m/esame_cicd
-                                                
