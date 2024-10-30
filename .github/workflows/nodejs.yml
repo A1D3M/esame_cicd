@@ -49,5 +49,5 @@ docker-build-and-push:
           context: .
           file: Dockerfile
           push: true
-        tags: a1d3m/esame_cicd
+          tags: a1d3m/esame_cicd
                                                 
